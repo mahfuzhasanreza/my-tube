@@ -5,8 +5,18 @@ const loadCategories = () => {
         .catch(error => console.log(error))
 }
 
-const displayCategories = (data) => {
+const displayCategories = (categories) => {
+    const categoryContainer = document.getElementById('categories');
 
+    categories.forEach(item => {
+        // btn create
+        const btn = document.createElement('button');
+        btn.classList = 'btn';
+        btn.innerText = item.category;
+
+        // show btn
+        categoryContainer.append(btn);
+    })
 }
 
 loadCategories();
